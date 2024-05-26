@@ -11,8 +11,8 @@ void printArray(int arr[], int n){
 }
 
 //int arr[]={3,7,10,mid=>11   ,5,7,9},n=7;
-// O(n)
-void simpleMerge2(int arr[], int l, int mid, int h) {
+// O(n+m) => O(n)
+void merge(int arr[], int l, int mid, int h) {
     int i=l;
     int szA = mid-l+1; // l=0 , mid = 3, h= 6 
     int n= mid+1;
@@ -23,7 +23,6 @@ void simpleMerge2(int arr[], int l, int mid, int h) {
 
     int C[szA+szB];
     int k = 0;
-
     while (i<n && j<m){
         if (arr[i]<arr[j])
             C[k++] = arr[i++];
@@ -41,12 +40,13 @@ void simpleMerge2(int arr[], int l, int mid, int h) {
     
 }
 
-void MS(int arr[], int l=0, int h=1) { /// MS (7 5)
+// O(nlog(n))
+void MS(int arr[], int l, int h) { /// MS (7 5)
     if (l<h) {
         int mid= (h-l)/2; 
         MS(arr, l, mid); /// left  7
         MS(arr, mid+1, h); /// right 5
-        simpleMerge2(arr, l=0,mid=0,h=1); /// merge
+        merge(arr, l=0,mid=0,h=1); /// merge => O(n)
     }
 }
 
