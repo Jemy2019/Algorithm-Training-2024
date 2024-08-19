@@ -12,7 +12,7 @@ have 10 3 16
 
 x = 5 
 */
-
+/// O(n)
 bool isOk(int x){
     int tmpk = k;///10
     for (int i=0;i<n;i++) {
@@ -31,7 +31,7 @@ bool isOk(int x){
 
 
 
-int binarySearch(){ /// O(logn) * O(isOK())
+int binarySearch(){ /// O(logn) * O(isOk) => O(nlogn)
     int l = 0;
     int h = 2 * 1e3;///2000 >> 2*1e9
 

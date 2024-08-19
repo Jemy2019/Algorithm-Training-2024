@@ -7,9 +7,10 @@ bool isOn(int k, int x) {
     return ((x>>k) & 1);
 }
 
+/// O(n * 2^n) 
 bool bitMask(int target){
     int sum = 0;
-    for(int mask=0; mask < (1<<n); mask++) { /// (2^n)-1
+    for(int mask=0; mask < (1<<n); mask++) { 
         /// mask =  7
         for (int k=0; k<n; k++){
             if (isOn(k, mask)){
